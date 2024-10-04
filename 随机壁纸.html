@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>😿🐢</title>
+</head>
+<style>
+    /* body{
+        background-image: url('https://pic2.zhimg.com/80/v2-c0aa3460b108ad1727269ae4dd7bd65d_1440w.webp');
+        background-size: cover;
+    } */
+    #bgbutton{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+<body>
+    <div id="bgbutton">
+        <button onclick="bgrandom()">随机壁纸</button>
+    </div>
+    <div id="imageNumber" style="text-align: center;"></div>  
+    <div id="imagesum" style="text-align: center;"></div>
+    <script>
+        document.body.style.backgroundSize = 'cover';
+        document.body.style.backgroundRepeat = 'no-repeat';
+        function bgrandom(){
+
+            const image_list = [
+                                'https://pic2.zhimg.com/80/v2-c0aa3460b108ad1727269ae4dd7bd65d_1440w.webp',
+                                'https://pic4.zhimg.com/80/v2-36a1ef5bf185c46fda24bd756d2ef113_1440w.webp',
+                                'https://pic1.zhimg.com/80/v2-fdf3ee6d953a8f4e04e0b96af452d8c0_1440w.webp',
+                                'https://pic2.zhimg.com/80/v2-cbafb56b3031acfa1ac11db260b94fd1_1440w.webp',
+                                'https://pic1.zhimg.com/80/v2-23202bd32dde1299e38cd7687abbeda8_1440w.webp',
+                                'https://pic3.zhimg.com/80/v2-72cdf30c9e01841033188c681796c47e_1440w.webp',
+                                'https://pic2.zhimg.com/80/v2-cfe360e675ee95e157913b1bd54c9ac5_1440w.webp',
+                                'https://pic3.zhimg.com/80/v2-428bb39660d115072d3f1d3795c4b516_1440w.webp',
+                                'https://pic3.zhimg.com/80/v2-25e3529f4806f6e6f47879c146bb31b2_1440w.webp',
+                                'https://pic3.zhimg.com/80/v2-e18713efb764475a24d98715aae15f4a_1440w.webp',
+                                ]
+            const random_doday = Math.floor(Math.random() * image_list.length);
+            document.body.style.backgroundImage = `url(${image_list[random_doday]})`;
+            document.getElementById('imageNumber').innerText = '当前图片序号：' + random_doday;  
+            document.getElementById('imagesum').innerHTML = '当前图片总数：<span style="color:red;">' + image_list.length + '</span>';  
+        }
+        bgrandom();
+    </script>
+</body>
+</html>
+
+
